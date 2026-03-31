@@ -1,0 +1,657 @@
+@font-face {
+    font-family: 'Heavy Heap';
+    src: url('./fonts/heavy_heap_rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================
+   NAVBAR STYLES
+   ========================== */
+
+/* Custom Gradient Navbar */
+.custom-navbar {
+    background: linear-gradient(to right, #d35400, #f39c12); /* Darker to lighter orange */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem; /* Increase font size slightly */
+    font-weight: bold; /* Make it a bit bolder */
+    padding: 10px 15px; /* Adds some padding for better spacing */
+    color: white !important; /* Ensure white text */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f5f5f5 !important; /* Slightly lighter on hover */
+}
+
+/* Highlight Active Page */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+}
+
+.navbar-brand {
+    font-size: 2.5rem; /* Adjust size */
+    color: white !important; /* Keeps the color white */
+    text-transform: uppercase; /* Ensures uppercase */
+    letter-spacing: 1px; /* Adds spacing */
+    font-family: 'Heavy Heap', sans-serif; /* Uses the Heavy Heap font */
+}
+
+.navbar-brand:hover {
+    color: white !important; /* Ensures color stays white on hover */
+}
+
+.navbar {
+    height: 60px; /* Keep header height fixed */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.cart-badge {
+    margin-left: 4px;
+    font-size: 0.9em;
+    color: white;
+    font-weight: normal;
+}
+
+
+/* ==========================
+   LOGIN PAGE STYLES
+   ========================== */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-box {
+    display: flex;
+    width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.login-left,
+.login-right {
+    padding: 40px;
+    width: 50%;
+}
+
+.login-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 8px 15px;
+}
+
+.login-button {
+    width: 100%;
+    background: #feba4f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background: #e67e22;
+}
+
+.social-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* ==========================
+   SOCIAL MEDIA ICONS (USED ON LOGIN & REGISTRATION)
+   ========================== */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+
+/* ==========================
+   REGISTRATION PAGE STYLES
+   ========================== */
+
+.register-button {
+    display: inline-block;
+    background: white;
+    color: #d35400;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.register-button:hover {
+    background: #f39c12;
+    color: white;
+}
+
+
+/* ==========================
+   LOGIN / REGISTRATION RIGHT SECTION (WELCOME BOX)
+   ========================== */
+
+.login-right {
+    background: linear-gradient(to right, #f7b733, #fc913a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.welcome-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ==========================
+/* PRODUCTS Page Styling
+========================== */
+/* Prevent header from overlapping content */
+/* Ensure body starts below navbar */
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    padding-left: 15px; /* Aligns it with the products */
+}
+
+
+.product-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: center;
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background: #D97706;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #b35c00;
+}
+
+
+/* ==========================
+   GENERAL FORM STYLES (USED IN LOGIN & REGISTRATION)
+   ========================== */
+
+   .registration-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 90vh; /* Ensures it takes the full viewport height */
+    width: 100%; /* Full width */
+}
+
+.form-container {
+    display: flex;
+    width: 800px;
+    max-width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-section {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-section {
+    width: 50%;
+    padding: 40px;
+    background: linear-gradient(to right, #D97706, #FACC15);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #D97706;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #b35c00;
+}
+
+.or-text {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* ==========================
+   SOCIAL ICONS IN FORM
+   ========================== */
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+
+/* ==========================
+   WELCOME SECTIONS ON LOGIN/REGISTER
+   ========================== */
+
+.welcome-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* ==========================
+   SECONDARY BUTTONS (USED FOR LINKS LIKE "Already have an account?")
+   ========================== */
+
+.btn-secondary {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: white;
+    color: #D97706;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #f8e2c2;
+}
+
+/* ==========================
+PRODUCTS PAGE UPDATE STLYE
+========================== */
+/* Page Title */
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-price {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-group-dp {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.btn-outline {
+    border: 1px solid #D97706;
+    background: none;
+    color: #D97706;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline:hover {
+    background: #D97706;
+    color: white;
+}
+
+.add-to-cart {
+    border: 1px solid #D97706;
+    background: none;
+    color: #D97706;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-to-cart:hover {
+    background: #D97706;
+    color: white;
+}
+
+/* ==========================
+   ADMIN EDIT & DELETE BUTTONS
+   ========================== */
+
+/* Edit Button */
+.btn.btn-primary {
+    background-color: #D97706; /* Your existing orange color */
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    margin: 10px 5px; /* Slight margin for spacing */
+}
+
+.btn.btn-primary:hover {
+    background-color: #b35c00; /* Darker orange on hover */
+}
+
+/* Delete Button */
+.btn.btn-danger {
+    background-color: #c0392b; /* A strong red */
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    margin: 10px 5px; /* Slight margin for spacing */
+}
+
+.btn.btn-danger:hover {
+    background-color: #a93226; /* Darker red on hover */
+}
+
+/* ==========================
+   HOMEPAGE STYLES
+   ========================== */
+
+   .homepage-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background for the homepage */
+}
+
+.homepage-welcome h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; /* Simple dark color */
+    margin-bottom: 20px;
+}
+
+.homepage-welcome p {
+    font-size: 1.2rem;
+    color: #666; /* Light grey text */
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.homepage-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.homepage-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.homepage-description {
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #fff; /* White background for description */
+    border-radius: 8px;
+}
+
+.homepage-description h2 {
+    font-size: 1.8rem;
+    color: #333; /* No colors, just clean text */
+    margin-bottom: 20px;
+}
+
+.homepage-description p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.homepage-team {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+.homepage-team h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.homepage-team p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.homepage-surfboard-industry {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+.homepage-surfboard-industry h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.homepage-surfboard-industry p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ==========================
+   Cart Page Styles
+   ========================== */
+   .cart-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f1f1f1;
+}
+
+.cart-table td {
+    background-color: #ffffff;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

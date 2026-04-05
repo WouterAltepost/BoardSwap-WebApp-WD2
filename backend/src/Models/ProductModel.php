@@ -10,8 +10,9 @@ class ProductModel extends BaseModel
         $params = [];
 
         if (!empty($filters['search'])) {
-            $conditions[] = "name LIKE :search";
+            $conditions[] = "(name LIKE :search OR description LIKE :search_desc)";
             $params['search'] = '%' . $filters['search'] . '%';
+            $params['search_desc'] = '%' . $filters['search'] . '%';
         }
         if (isset($filters['min_price'])) {
             $conditions[] = "price >= :min_price";

@@ -57,7 +57,7 @@ class ProductController
             'min_price' => isset($_GET['min_price']) ? (float) $_GET['min_price'] : null,
             'max_price' => isset($_GET['max_price']) ? (float) $_GET['max_price'] : null,
             'page'      => $_GET['page'] ?? 1,
-            'limit'     => $_GET['limit'] ?? 10,
+            'limit'     => $_GET['limit'] ?? 12,
         ];
 
         $productModel = new ProductModel();
@@ -69,10 +69,12 @@ class ProductController
 
         echo json_encode([
             "data"       => $result['data'],
-            "total"      => $result['total'],
-            "page"       => $page,
-            "limit"      => $limit,
-            "totalPages" => $totalPages,
+            "pagination" => [
+                "total"       => $result['total'],
+                "page"        => $page,
+                "limit"       => $limit,
+                "total_pages" => $totalPages,
+            ],
         ], JSON_UNESCAPED_SLASHES);
     }
 

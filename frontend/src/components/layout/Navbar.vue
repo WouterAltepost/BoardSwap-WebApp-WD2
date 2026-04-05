@@ -28,6 +28,9 @@ const cartStore = useCartStore()
             <RouterLink class="nav-link" to="/products">Products</RouterLink>
           </li>
           <li class="nav-item">
+            <RouterLink class="nav-link" to="/surf-conditions">Surf Conditions</RouterLink>
+          </li>
+          <li class="nav-item">
             <RouterLink class="nav-link" to="/cart">
               Cart<span v-if="cartStore.itemCount > 0" class="cart-badge">({{ cartStore.itemCount }})</span>
             </RouterLink>

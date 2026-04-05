@@ -56,6 +56,9 @@ try {
     } elseif (str_starts_with($uri, '/api/users')) {
         $controller = new \App\Controllers\UserController();
         $controller->handleRequest($method, $uri);
+    } elseif ($uri === '/api/surf-conditions') {
+        $controller = new \App\Controllers\SurfController();
+        $controller->handleRequest($method, $uri);
     } else {
         http_response_code(404);
         echo json_encode(["error" => "Route not found"], JSON_UNESCAPED_SLASHES);

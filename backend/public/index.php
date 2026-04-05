@@ -36,6 +36,12 @@ if (file_exists(__DIR__ . '/../.env')) {
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];
 
+// Health check endpoint
+if ($uri === '/' || $uri === '/health') {
+    echo json_encode(["status" => "ok"]);
+    return;
+}
+
 // Route to controllers
 try {
     if (str_starts_with($uri, '/api/auth')) {

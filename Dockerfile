@@ -1,9 +1,8 @@
-FROM php:8.2-apache
+FROM php:8.2-apache-bookworm
 
 RUN apt-get update && apt-get install -y unzip git \
     && docker-php-ext-install pdo pdo_mysql \
-    && rm -f /etc/apache2/mods-enabled/mpm_event.* /etc/apache2/mods-enabled/mpm_worker.* \
-    && a2enmod mpm_prefork rewrite \
+    && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

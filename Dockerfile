@@ -23,6 +23,9 @@ COPY backend/composer.json backend/composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 COPY backend/ ./
 
+RUN echo '[www]' > /usr/local/etc/php-fpm.d/zz-listen.conf && \
+    echo 'listen = 9000' >> /usr/local/etc/php-fpm.d/zz-listen.conf
+
 COPY --from=frontend-build /build/dist /var/www/spa
 COPY nginx.railway.conf /etc/nginx/nginx.conf
 COPY docker-entrypoint.sh /entrypoint.sh

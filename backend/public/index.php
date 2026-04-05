@@ -37,19 +37,24 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Route to controllers
-if (str_starts_with($uri, '/api/auth')) {
-    $controller = new \App\Controllers\AuthController();
-    $controller->handleRequest($method, $uri);
-} elseif (str_starts_with($uri, '/api/products')) {
-    $controller = new \App\Controllers\ProductController();
-    $controller->handleRequest($method, $uri);
-} elseif (str_starts_with($uri, '/api/cart')) {
-    $controller = new \App\Controllers\CartController();
-    $controller->handleRequest($method, $uri);
-} elseif (str_starts_with($uri, '/api/users')) {
-    $controller = new \App\Controllers\UserController();
-    $controller->handleRequest($method, $uri);
-} else {
-    http_response_code(404);
-    echo json_encode(["error" => "Route not found"], JSON_UNESCAPED_SLASHES);
+try {
+    if (str_starts_with($uri, '/api/auth')) {
+        $controller = new \App\Controllers\AuthController();
+        $controller->handleRequest($method, $uri);
+    } elseif (str_starts_with($uri, '/api/products')) {
+        $controller = new \App\Controllers\ProductController();
+        $controller->handleRequest($method, $uri);
+    } elseif (str_starts_with($uri, '/api/cart')) {
+        $controller = new \App\Controllers\CartController();
+        $controller->handleRequest($method, $uri);
+    } elseif (str_starts_with($uri, '/api/users')) {
+        $controller = new \App\Controllers\UserController();
+        $controller->handleRequest($method, $uri);
+    } else {
+        http_response_code(404);
+        echo json_encode(["error" => "Route not found"], JSON_UNESCAPED_SLASHES);
+    }
+} catch (\Throwable $e) {
+    http_response_code(500);
+    echo json_encode(["error" => "Internal server error", "message" => $e->getMessage()], JSON_UNESCAPED_SLASHES);
 }

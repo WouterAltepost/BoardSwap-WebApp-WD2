@@ -82,7 +82,7 @@ onMounted(fetchProducts)
 
     <!-- Products Grid -->
     <div v-else-if="products.length" class="row">
-      <div v-for="product in products" :key="product.id" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div v-for="product in products" :key="product.id" class="col-12 col-sm-6 col-lg-4 mb-4">
         <ProductCard :product="product" />
       </div>
     </div>

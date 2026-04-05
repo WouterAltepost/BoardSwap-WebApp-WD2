@@ -29,7 +29,7 @@ async function fetchProducts() {
   try {
     const response = await api.get('/products', { params: { page: currentPage.value } })
     products.value = response.data.data || []
-    totalPages.value = response.data.totalPages || 1
+    totalPages.value = response.data.pagination?.total_pages || response.data.totalPages || 1
   } catch {
     products.value = []
   } finally {

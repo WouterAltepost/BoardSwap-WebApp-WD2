@@ -49,7 +49,7 @@ async function placeOrder() {
 
     <div class="row">
       <!-- Shipping Form -->
-      <div class="col-md-7">
+      <div class="col-12 col-md-7">
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title mb-3">Shipping Information</h5>
@@ -127,7 +127,7 @@ async function placeOrder() {
       </div>
 
       <!-- Order Summary -->
-      <div class="col-md-5">
+      <div class="col-12 col-md-5 mt-4 mt-md-0">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title mb-3">Order Summary</h5>

@@ -22,7 +22,7 @@ onMounted(async () => {
       api.get('/products', { params: { limit: 1 } }),
       api.get('/users'),
     ])
-    totalProducts.value = productsRes.data.total || 0
+    totalProducts.value = productsRes.data.pagination?.total || productsRes.data.total || 0
     totalUsers.value = Array.isArray(usersRes.data) ? usersRes.data.length : usersRes.data.total || 0
   } catch {
     // silently fail, counts stay at 0
@@ -45,21 +45,21 @@ onMounted(async () => {
     <template v-else>
       <!-- Stat Cards -->
       <div class="row g-4 mb-4">
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <div class="stat-card">
             <div class="stat-label">Welcome</div>
             <div class="stat-number">{{ authStore.user?.username || 'Admin' }}</div>
             <div class="stat-desc">Logged in as administrator</div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <div class="stat-card">
             <div class="stat-label">Total Products</div>
             <div class="stat-number">{{ totalProducts }}</div>
             <div class="stat-desc">Listed on BoardSwap</div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <div class="stat-card">
             <div class="stat-label">Total Users</div>
             <div class="stat-number">{{ totalUsers }}</div>
@@ -72,7 +72,7 @@ onMounted(async () => {
       <h2 class="section-title">Manage</h2>
 
       <div class="row g-4">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="action-card">
             <div class="action-icon">🏄</div>
             <h5 style="font-weight: bold; margin-bottom: 8px;">Product Management</h5>
@@ -82,7 +82,7 @@ onMounted(async () => {
             </RouterLink>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="action-card">
             <div class="action-icon">👥</div>
             <h5 style="font-weight: bold; margin-bottom: 8px;">User Management</h5>

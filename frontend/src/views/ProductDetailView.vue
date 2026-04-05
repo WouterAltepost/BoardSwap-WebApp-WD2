@@ -65,14 +65,15 @@ function formatPrice(price) {
     <div v-else-if="error && !product" class="alert alert-danger">{{ error }}</div>
 
     <div v-else-if="product" class="row">
-      <div class="col-md-6">
+      <div class="col-12 col-md-6 mb-4 mb-md-0">
         <img
           :src="product.image_url || 'https://placehold.co/600x400?text=No+Image'"
           :alt="product.name"
-          style="max-height: 500px; width: auto; object-fit: contain; display: block; margin: 0 auto;"
+          class="img-fluid"
+          style="max-height: 500px; object-fit: contain; display: block; margin: 0 auto;"
         />
       </div>
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <h1 class="mb-3">{{ product.name }}</h1>
         <p class="fs-3 fw-bold mb-3" style="color: #D97706">{{ formatPrice(product.price) }}</p>
         <p class="text-muted mb-3">{{ product.description }}</p>

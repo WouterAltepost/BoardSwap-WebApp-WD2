@@ -4,7 +4,7 @@ set -e
 PORT=${PORT:-80}
 
 echo "==> Configuring nginx to listen on port $PORT..."
-sed -i "s/listen 80;/listen $PORT;/g" /etc/nginx/nginx.conf
+sed -i "s/listen 0.0.0.0:80;/listen 0.0.0.0:$PORT;/g" /etc/nginx/nginx.conf
 
 echo "==> Checking Vue SPA files..."
 ls -la /var/www/spa/ || echo "ERROR: /var/www/spa does not exist or is empty"

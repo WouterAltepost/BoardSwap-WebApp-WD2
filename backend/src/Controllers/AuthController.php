@@ -111,7 +111,7 @@ class AuthController
             'exp'   => $now + 3600,
         ];
 
-        $token = JWT::encode($payload, $_ENV['JWT_SECRET'], 'HS256');
+        $token = JWT::encode($payload, getenv('JWT_SECRET') ?: 'fallback_secret', 'HS256');
 
         echo json_encode([
             "token" => $token,

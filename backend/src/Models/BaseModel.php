@@ -13,12 +13,13 @@ class BaseModel
     public function __construct()
     {
         if (!self::$pdo) {
-            $host = $_ENV['DB_HOST'];
-            $db = $_ENV['DB_NAME'];
-            $user = $_ENV['DB_USER'];
-            $pass = $_ENV['DB_PASSWORD'];
+            $host     = getenv('DB_HOST') ?: 'localhost';
+            $db       = getenv('DB_NAME') ?: 'developmentdb';
+            $user     = getenv('DB_USER') ?: 'developer';
+            $pass     = getenv('DB_PASSWORD') ?: 'secret123';
+            $charset  = getenv('DB_CHARSET') ?: 'utf8mb4';
 
-            $dsn = "mysql:host=$host;dbname=$db;charset=utf8";
+            $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

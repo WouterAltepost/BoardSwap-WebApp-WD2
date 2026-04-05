@@ -18,7 +18,7 @@ class AuthMiddleware
         }
 
         try {
-            $decoded = JWT::decode($matches[1], new Key($_ENV['JWT_SECRET'], 'HS256'));
+            $decoded = JWT::decode($matches[1], new Key(getenv('JWT_SECRET') ?: 'fallback_secret', 'HS256'));
             return (array) $decoded;
         } catch (\Exception $e) {
             http_response_code(401);
